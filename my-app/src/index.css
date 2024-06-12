@@ -1,0 +1,238 @@
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+
+@import "react-slideshow-image/dist/styles.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+.title {
+  @apply text-[45px] font-normal md:text-white tracking-wide py-2;
+}
+
+.heading {
+  @apply text-2xl font-medium mb-6 relative w-[350px];
+  color: #ffd010;
+}
+
+.heading::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 40%;
+  height: 1px;
+  width: 60px;
+  color: aqua;
+  background-color: #ffd010;
+}
+
+/* header */
+
+header {
+  /* background-color: #f2ece4; */
+  @apply flex justify-between items-center p-4 font-semibold;
+}
+
+.navItem {
+  @apply p-3 lg:text-[16px] text-xs font-semibold tracking-wider hover:text-black;
+}
+
+.MobileNo {
+  @apply flex items-center bg-black text-yellow-200 lg:text-lg text-xs font-bold rounded-lg p-3;
+  box-shadow: 0 0 0 0 #435f54;
+}
+
+/* feature Proprty  */
+
+.featureList {
+  background-color: rgba(0, 0, 0, 0.3);
+  @apply py-1 px-2 w-fit rounded-xl mb-2 md:text-white font-medium text-lg;
+}
+
+/* bookinfo */
+
+.BookInfoList {
+  background-color: rgba(0, 0, 0, 0.7);
+  @apply flex md:flex-col flex-row justify-center items-center  gap-2 text-xl font-bold  px-12 py-2 rounded-xl;
+  color: #fbe486;
+}
+
+/* SiteVistForm */
+
+.SiteVistForm {
+  @apply md:absolute md:w-[22%] right-0 bottom-0 p-2 md:bg-customColor;
+
+  /* filter: blur(1.8); */
+  backdrop-filter: blur(25px);
+}
+
+.SiteVistForm form {
+  @apply flex flex-col gap-3 my-3;
+}
+
+.SiteVistForm form input {
+  @apply border border-black placeholder:text-black text-black bg-transparent rounded-lg text-[16px] py-2 outline-none;
+}
+.SiteVistForm form input:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.SiteVistForm form button {
+  @apply border border-black rounded-lg text-sm py-2 outline-none focus:border;
+}
+
+/* overview section */
+
+.Overview {
+  background-image: url("https://m3m-properties.net/m3m-altitude/images/download.png");
+  background-position: center center;
+  background-size: 100%;
+  position: relative;
+}
+
+.Overview::before {
+  content: "OVERVIEW";
+  transform: rotate(90deg);
+  font-size: 70px;
+  font-weight: bolder;
+  position: absolute;
+  bottom: 50%;
+  right: -10%;
+  z-index: -1;
+  height: 100px;
+  @apply text-slate-200;
+}
+
+/* highlight section */
+
+.Highlights {
+  @apply bg-contain bg-no-repeat bg-center bg-slate-50 px-4 md:px-20 py-16 relative;
+
+  background-image: url("https://m3m-properties.net/m3m-altitude/images/highlight-bg.png");
+}
+
+.Highlights::before {
+  content: "HIGHLIGHT";
+  transform: rotate(270deg);
+  /* font-size: 80px; */
+  font-weight: bolder;
+  position: absolute;
+  bottom: 50%;
+  /* right: -10%; */
+
+  z-index: 1;
+  height: 100px;
+  @apply text-slate-200 lg:text-7xl lg:left-[-20%] text-4xl left-[-5%];
+}
+
+.Highlights ul li {
+  @apply py-6 text-lg;
+}
+
+.Highlights ul li span {
+  @apply p-3 text-2xl text-center border-[6px] font-bold tracking-widest border-slate-200;
+}
+
+/* amenties */
+
+.Amenities {
+  @apply md:px-8 px-4 bg-primaryBackground relative;
+}
+
+.Amenities::before {
+  content: "AMENITIES";
+  font-size: 80px;
+  font-weight: bolder;
+  position: absolute;
+  right: 3%;
+  z-index: 1;
+  height: 100px;
+  @apply text-slate-200 lg:block hidden;
+}
+
+.Amenities .slide {
+  @apply grid grid-rows-1 grid-cols-2 h-60 py-4 relative overflow-hidden;
+}
+
+.Amenities .slide .firstChild {
+  @apply relative;
+
+  background-color: #9b9183;
+  color: #fbe486;
+}
+
+/* floor plan */
+.FloorPlan {
+  @apply bg-slate-50 md:px-8  px-0 py-12 relative;
+}
+.FloorPlan::before {
+  content: "FLOOR PLAN";
+  transform: rotate(90deg);
+  font-size: 70px;
+  font-weight: bolder;
+  position: absolute;
+  right: -10%;
+  bottom: 50%;
+  z-index: 1;
+  height: 100px;
+  @apply text-slate-200 lg:text-7xl text-4xl lg:right-[-10%] right-[-3%];
+}
+/* gallery */
+
+.Gallery {
+  @apply md:px-20 px-4  py-32;
+}
+
+/* location
+ */
+
+.Location {
+  @apply px-8 py-24 bg-primaryBackground;
+}
+
+/* contact us */
+
+.ContactUs {
+  @apply md:px-24 px-4 py-24;
+  background-image: url("https://m3m-properties.net/m3m-altitude/images/bg-map-footer.png");
+}
+
+.ContactUs form input {
+  @apply px-4 py-2 w-full my-2 bg-transparent rounded-lg outline-none border;
+  border: 1px solid #fbe486;
+}
+
+.ContactUs form input::placeholder {
+  color: #fbe486;
+}
+
+.ContactUs form button {
+  @apply px-4 py-2 w-full my-2 bg-transparent rounded-lg outline-none border;
+  border: 1px solid gainsboro;
+}
+
+/* ............... */
+
+footer {
+  @apply md:px-24 px-4 py-12 bg-primaryBackground;
+}
